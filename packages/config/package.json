@@ -1,0 +1,10 @@
+{
+  "name": "@repo/config",
+  "version": "0.0.1",
+  "private": true,
+  "exports": {
+    "./brand":                "./brand.ts",
+    "./tailwind.config.base": "./tailwind.config.base.ts",
+    "./globals.css":          "./globals.css"
+  }
+}
