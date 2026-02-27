@@ -43,3 +43,8 @@ jobs:
           NEXT_PUBLIC_SANITY_PROJECT_ID: "placeholder"
           NEXT_PUBLIC_SANITY_DATASET: "production"
           NEXT_PUBLIC_SITE_URL: "http://localhost:3000"
+          SANITY_API_TOKEN: "placeholder"
+          DATABASE_URL: "postgresql://placeholder"
+          RESEND_API_KEY: "placeholder"
+          EMAIL_FROM: "onboarding@resend.dev"
+          EMAIL_TO: "placeholder@example.com"

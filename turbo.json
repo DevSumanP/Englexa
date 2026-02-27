@@ -1,8 +1,28 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "NEXT_PUBLIC_SANITY_PROJECT_ID",
+    "NEXT_PUBLIC_SANITY_DATASET",
+    "NEXT_PUBLIC_SITE_URL",
+    "SANITY_API_TOKEN",
+    "DATABASE_URL",
+    "RESEND_API_KEY",
+    "EMAIL_FROM",
+    "EMAIL_TO"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
+      "env": [
+        "NEXT_PUBLIC_SANITY_PROJECT_ID",
+        "NEXT_PUBLIC_SANITY_DATASET",
+        "NEXT_PUBLIC_SITE_URL",
+        "SANITY_API_TOKEN",
+        "DATABASE_URL",
+        "RESEND_API_KEY",
+        "EMAIL_FROM",
+        "EMAIL_TO"
+      ],
       "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "dev":  { "cache": false, "persistent": true },
