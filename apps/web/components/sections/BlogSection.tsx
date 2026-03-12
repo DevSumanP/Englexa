@@ -15,7 +15,6 @@ const posts = [
     { image: blog3, date: "Apr 28, 2025", category: "Business English", title: "English Skills for Career Success at Work" },
 ];
 
-const SPRING_SOFT = { type: "spring", stiffness: 180, damping: 26 } as const;
 const SPRING_SNAP = { type: "spring", stiffness: 340, damping: 28 } as const;
 
 const BlogSection = () => {

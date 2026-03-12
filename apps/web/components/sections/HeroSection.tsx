@@ -20,6 +20,7 @@ import {
 } from "framer-motion";
 import { useRef, useState } from "react";
 import AnimatedSection, { FadeInChild } from "../ui/AnimatedSection";
+import VideoModal from "../ui/VideoModal";
 
 // ─── Easing presets ──────────────────────────────────────────────────────────
 
@@ -47,7 +48,7 @@ const students = [student1, student2, student3, student4];
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLDivElement>(null);
-  // const [playHovered, setPlayHovered] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   // ── Parallax on hero background ──
   const { scrollYProgress: heroProg } = useScroll({
@@ -216,8 +217,8 @@ const HeroSection = () => {
           <motion.button
             className="absolute inset-0 flex items-center justify-center"
             aria-label="Play Video"
-            // onHoverStart={() => setPlayHovered(true)}
-            // onHoverEnd={() => setPlayHovered(false)}
+            onClick={() => setIsVideoOpen(true)}
+            whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.94 }}
             transition={SPRING_SNAP}
           >
@@ -288,6 +289,12 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* ── Video Modal ────────────────────────────────────────────── */}
+      <VideoModal
+        isOpen={isVideoOpen}
+        onClose={() => setIsVideoOpen(false)}
+        videoUrl="https://framerusercontent.com/assets/MLWPbW1dUQawJLhhun3dBwpgJak.mp4"
+      />
     </section>
   );
 };

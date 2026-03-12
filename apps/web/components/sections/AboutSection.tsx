@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import aboutTutor from "@/public/images/about/about-tutor.jpg";
 import Image from "next/image";
 import award1 from "@/public/images/about/award1.svg";
@@ -27,10 +27,10 @@ const AboutSection = () => {
     const imgRef = useRef<HTMLDivElement>(null);
 
     // Subtle inner parallax on the portrait
-    const { scrollYProgress } = useScroll({
-        target: imgRef,
-        offset: ["start end", "end start"],
-    });
+    // const { scrollYProgress } = useScroll({
+    //     target: imgRef,
+    //     offset: ["start end", "end start"],
+    // });
     /*
     const yRaw = useTransform(scrollYProgress, [0, 1], ["6%", "-6%"]);
     const y = useSpring(yRaw, { stiffness: 60, damping: 20 });

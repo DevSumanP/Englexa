@@ -5,7 +5,7 @@ import Image from "next/image";
 import type { StaticImageData } from "next/image";
 
 import { ArrowUpRight } from "lucide-react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 import { textStyles, colorStyles, spacingStyles, radiusStyles } from "@/lib/token";
 import tutorExperience from "@/public/images/results/tutor-experience.jpg";
 
@@ -280,9 +280,6 @@ const ResultsSection = () => {
 
 const InnerParallaxImage = ({ src, alt }: { src: string | StaticImageData; alt: string }) => {
     const ref = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-    const yRaw = useTransform(scrollYProgress, [0, 1], ["8%", "-8%"]);
-    const y = useSpring(yRaw, { stiffness: 60, damping: 20 });
 
     return (
         <div ref={ref} className={`absolute inset-0 overflow-hidden ${radiusStyles.card}`}>
